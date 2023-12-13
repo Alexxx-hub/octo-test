@@ -1,0 +1,79 @@
+; English <en> to Ukrainian (Ukraine) <uk-UA> localization document for `LocationTwo` naninovel script
+
+# d2849ce1
+; Player: "Hi, I'm from Sarah. She asked me to bring something that she forgot somewhere in your house."
+Player: "Привіт, я від Сари. Вона попросила принести її каблучку. Схоже, що вона залишила її десь у тебе"
+# a00c15eb
+; Clare: "Oh, Hi."
+Clare: "Ой, привіт"
+# 24b9395
+; Clare: "Yeah, she called me, but she don't said that you are so cute"
+ Clare: "Так, вона телефонувала, але не говорила, що ти такий красунчик"
+# e9c14510
+; Player: "Oh come on. So, have you found her ring?"
+ Player: "Та годі тобі, то що, ти вже знайшла її?"
+# 56713b32
+; Clare: "I'm not sure that i can handle with it by myself. Maybe if you wanna help me?"
+Clare: "Не впевнена, що сама впораюсь. Можливо якби ти мені допоміг...?"
+# 180486c7
+; Player: "Ok, let's try"
+Player: "Добре, давай спробуємо"
+# 75119d0b
+; Clare: "Oh, it was fun."
+Clare: "Ой, це було весело"
+# 8b6fa01c
+; Clare: "But one more room left where we not looking yet"
+Clare: "Але схоже, що залишилася ще одна кімната"
+# 81679e51
+; Player: "I'm sure we find the ring there"
+Player: "Я впевнений. що каблучка там"
+# f3a0078
+; Clare: "I hope so. So, can you look it in my bedroom upstair?"
+Clare: "Так, сподіваюсь. То, ти не міг би подивитися в моїй спальні на горі?"
+# bfb4ecbf
+; Player: "If it's you asking for..."
+Player: "Нуу, якщо ти просиш..."
+# b99a97e2
+; Clare: "Yeah, and you know what. It was actually my ring. Sarah borrowed it from me and didn't return it."
+Clare: "Так, і знаєш що. Взагалі це моя каблучка. Сара просто позичила її в мене та не повернула"
+# de279144
+; Clare: "I almost forgot how long it has been since I was given gifts, such as this ring..."
+Clare: "Я і взагалі забула, коли мені останній раз дарували каблучки..."
+# d36e5973
+; Clare: "Did you find it?"
+Clare: "Ти знайов її?"
+# 1a7ad991
+; @choice "No, I'm still searching" goto:.Return
+@choice "Ні, ще шукаю" goto:.Return
+# 979dc755
+; Player: "Hmm, where she is?"
+Player: "Хмм, куди вона поділась?"
+# 12ada357
+; Player: "She left home and left me alone? What an interesting girl"
+Player: "Пішла та залишила мене одного? Що за дівка"
+# 3b3a6453
+; Player: "Maybe I should call her... damn, I forgot my phone"
+Player: "Можливо зателефонувати їй...дідько, забув свого телефона"
+# 6bc26bbc
+; Player: "Hmm, this is a really beautiful ring... So shiny... It will look great on her finger."
+Player: "Хмм, а ця каблучка дійсно гарна...Така блискуча...Вона б гарно виглядала на її тендітному пальчику"
+# 911af140
+; Player: "On the other hand, she said that it was actually her ring. But Sarah asked me. Why is she doing this? Maybe I should stay and wait for Claire?"
+Player: "С іншого боку, вона сказала, що це її каблучка. Але Сара попросила мене. Чому вона так зробила? Можливо потрібно залишитись та почекати Клер?"
+# 792951a
+; Player: "No, I need to clarify this right now!"
+Player: "Ні, мені потрібно з'ясувати все негайно!"
+# c3180f50
+; @choice  button:Prefabs/Interactive/Home pos:-850,450,0 handler:ButtonArea goto:.Exit
+
+# 116fa609
+; Clare: "Oh, honey, thank you. So, maybe you want check my bedroom again...?"
+Clare: "Ой, дякую любий.Тож, чи не хочеш перевірити мою спальню ще раз...?"
+# 2b7284df
+; @choice  "Sorry, I have a plans. I need to play Dota 2 with my friends."
+@choice  "Вибач, але маю плані. Потрібно з кєнтами в Дотку пограти."
+# 8aed62a
+; Clare: "Fuck off, bitch!"
+Clare: "Відвали, опудало"
+# c3180f50
+; @choice  button:Prefabs/Interactive/Home pos:-850,450,0 handler:ButtonArea goto:.Exit

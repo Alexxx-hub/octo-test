@@ -1,0 +1,113 @@
+; -----------------------------------------------------
+# Start
+@back Loc2
+; -----------------------------------------------------
+@if isRingPicked==true
+@goto .TalkToSelf
+@else
+; -----------------------------------------------------
+@if LocationTwoCurrentState==1
+@goto .NotFound
+@endif
+; -----------------------------------------------------
+@endIf
+; -----------------------------------------------------
+; first launch
+; -----------------------------------------------------
+@char Player.Neutral
+@char Clare.Neutral
+; -----------------------------------------------------
+; dialog
+; -----------------------------------------------------
+Player: "Hi, I'm from Sarah. She asked me to bring something that she forgot somewhere in your house."
+Clare: "Oh, Hi."
+Clare: "Yeah, she called me, but she don't said that you are so cute"
+Player: "Oh come on. So, have you found her ring?"
+Clare: "I'm not sure that i can handle with it by myself. Maybe if you wanna help me?"
+Player: "Ok, let's try"
+; -----------------------------------------------------
+@set LocationTwoCurrentState=1
+; -----------------------------------------------------
+@miniGame
+# AfterGame
+@back Loc2
+@char Player.Neutral
+@char Clare.Neutral
+; -----------------------------------------------------
+; dialog
+; -----------------------------------------------------
+Clare: "Oh, it was fun."
+Clare: "But one more room left where we not looking yet"
+Player: "I'm sure we find the ring there"
+Clare: "I hope so. So, can you look it in my bedroom upstair?"
+Player: "If it's you asking for..."
+Clare: "Yeah, and you know what. It was actually my ring. Sarah borrowed it from me and didn't return it."
+Clare: "I almost forgot how long it has been since I was given gifts, such as this ring..."
+; -----------------------------------------------------
+@set TaskText=SecondTask
+; -----------------------------------------------------
+@wait 0.5
+@unlock Location_3
+@hideAll
+@goto Home.Home
+; -----------------------------------------------------
+; if not found ring yet
+; -----------------------------------------------------
+# NotFound
+@char Player.Neutral
+@char Clare.Neutral
+Clare: "Did you find it?"
+@choice "No, I'm still searching" goto:.Return
+@stop
+; -----------------------------------------------------
+# Return
+@wait 1.0
+@hideAll
+@goto Home.Home
+; -----------------------------------------------------
+# TalkToSelf
+@back Loc2
+; -----------------------------------------------------
+; check final resault
+; -----------------------------------------------------
+@if FinalResault==1||FinalResault==3
+@goto .FinalBad
+@elseif FinalResault==2
+@goto .FinalGood
+@endif
+; -----------------------------------------------------
+; dialog
+; -----------------------------------------------------
+@char Player.Neutral
+Player: "Hmm, where she is?"
+Player: "She left home and left me alone? What an interesting girl"
+Player: "Maybe I should call her... damn, I forgot my phone"
+Player: "Hmm, this is a really beautiful ring... So shiny... It will look great on her finger."
+Player: "On the other hand, she said that it was actually her ring. But Sarah asked me. Why is she doing this? Maybe I should stay and wait for Claire?"
+Player: "No, I need to clarify this right now!"
+; -----------------------------------------------------
+@hidePrinter 
+@set TaskText=FifthTask
+@set LocationOneCurrentState=2
+@choice  button:Prefabs/Interactive/Home pos:-850,450,0 handler:ButtonArea goto:.Exit
+@stop
+; -----------------------------------------------------
+# Exit
+@hideAll
+@goto Home.Home
+; -----------------------------------------------------
+# FinalGood
+@char Clare.Happy
+@char Player.Happy
+Clare: "Oh, honey, thank you. So, maybe you want check my bedroom again...?"
+@choice "Sorry, I have a plans. I need to play Dota 2 with my friends."
+@stop
+@hide Player
+@set FinalResault=3
+; -----------------------------------------------------
+# FinalBad
+@char Clare.Angry
+Clare: "Fuck off, bitch!"
+@choice  button:Prefabs/Interactive/Home pos:-850,450,0 handler:ButtonArea goto:.Exit
+@stop
+; -----------------------------------------------------

@@ -1,0 +1,13 @@
+;-----------------------------------------------------
+# Home
+@back Home
+;-----------------------------------------------------
+@hidePrinter 
+;-----------------------------------------------------
+@choice  button:Prefabs/Locations/Location_1 pos:-600,50,0 handler:ButtonArea goto:LocatationOne
+@choice  button:Prefabs/Locations/Location_2 pos:0,50,0 handler:ButtonArea goto:LocationTwo
+@choice  button:Prefabs/Locations/Location_3 pos:600,50,0 handler:ButtonArea goto:LocationThree
+;-----------------------------------------------------
+@stop
+@hideAll
+;-----------------------------------------------------

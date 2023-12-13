@@ -1,0 +1,10 @@
+; English <en> to Ukrainian (Ukraine) <uk-UA> localization document for `Home` naninovel script
+
+# 20cdbd5b
+; @choice  button:Prefabs/Locations/Location_1 pos:-600,50,0 handler:ButtonArea goto:LocatationOne
+
+# 8a1bc071
+; @choice  button:Prefabs/Locations/Location_2 pos:0,50,0 handler:ButtonArea goto:LocationTwo
+
+# 5a0166dc
+; @choice  button:Prefabs/Locations/Location_3 pos:600,50,0 handler:ButtonArea goto:LocationThree

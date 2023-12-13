@@ -1,0 +1,10 @@
+;-----------------------------------------------------
+# Start
+@back Home
+@set isRingPicked=false
+@input PlayerName summary:"Choose your name"
+@stop
+
+@hideAll
+@goto LocatationOne.Start
+;-----------------------------------------------------

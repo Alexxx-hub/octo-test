@@ -1,0 +1,107 @@
+; -----------------------------------------------------
+# Start
+@back Loc1
+; -----------------------------------------------------
+; check if player be here at first time
+; -----------------------------------------------------
+@if LocationOneCurrentState==1
+@if isRingPicked==false
+@goto .SecondState
+@endif
+; -----------------------------------------------------
+@goto .SecondState
+@endIf
+; -----------------------------------------------------
+; check if player find the ring
+; -----------------------------------------------------
+@if LocationOneCurrentState=2
+@goto .ThirdState
+@endif
+; -----------------------------------------------------
+; first scene
+; -----------------------------------------------------
+@char Player.Neutral look:left
+@char Sara.Neutral
+; -----------------------------------------------------
+; dialog
+; -----------------------------------------------------
+Player: "Hello"
+Sara: "Hi, I'm glad to see you today. I have a request"
+Player: "I'm all ears"
+Sara: "Can you visit my friend Clare. It seems like I foggot my ring in her house. Can you bring it to me?"
+Player: "Sure"
+; -----------------------------------------------------
+@set TaskText=FirstTask
+@showUI TaskLog
+@lock Location_3
+@set LocationOneCurrentState=1
+; -----------------------------------------------------
+# Return
+@wait 1.0
+@hideAll
+@goto Home.Home
+; -----------------------------------------------------
+# SecondState
+@char Player.Neutral
+@char Sara.Neutral
+; -----------------------------------------------------
+; dialog
+; -----------------------------------------------------
+Sara: "Have you found my ring yet?"
+; -----------------------------------------------------
+@choice "No, I'm still searching" goto:.Return
+@stop
+; -----------------------------------------------------
+# ThirdState
+; -----------------------------------------------------
+; check the final resault
+; -----------------------------------------------------
+@if FinalResault==2||FinalResault==3
+@goto .FinalBad
+@elseif FinalResault==1
+@goto .FinalGood
+@endif
+; -----------------------------------------------------
+; dialog
+; -----------------------------------------------------
+@char Sara.Neutral
+Sara: "Hello {PlayerName}! So glad to see you again! Look who is there!"
+@char Clare.Neutral
+Clare: "Hello-hello handsome-guy-who-sara-hide-from-me! Have you checked my bedroom?"
+Clare: "I hope you did it?"
+Sara: "What is she talking about? What were you two doing there?"
+Player: "Hello girls! Don't be mad, i just try find your ring"
+Sara: "Ok, sorry, did you find it?"
+Player: "Yaeh, but..."
+Sara: "Oh, it's so great, thank you!"
+Player: "But Clare said that it is her ring"
+Sara: "What?!"
+Sara: "Emm...actually yes, but not...ok, just give it to me, please"
+Clare: "Actually not?"
+Clare: "Yes, this is my ring, I lent it to you, so I want you, my handsome man, to return it to me, please."
+; -----------------------------------------------------
+@choice "Give ring to Sara" goto:.Return set:FinalResault=1
+@choice "Give ring to Clare" goto:.Return set:FinalResault=2
+@choice "Be a sneeky-peeky like and save it for yourself" goto:.Return set:FinalResault=3
+; -----------------------------------------------------
+@stop
+; -----------------------------------------------------
+# Exit
+@hideAll
+@goto Home.Home
+; -----------------------------------------------------
+# FinalGood
+@char Sara.Happy
+@char Player.Happy
+Sara: "Oh, honey, thank you. So, maybe you want check my bedroom too...?"
+@choice "Sorry, I have a plans. I need to play Dota 2 with my friends."
+@stop
+@hide Player
+@set FinalResault=3
+; -----------------------------------------------------
+# FinalBad
+@char Sara.Angry
+Sara: "Fuck off, bitch!"
+@choice  button:Prefabs/Interactive/Home pos:-850,450,0 handler:ButtonArea goto:.Exit
+@stop
+; -----------------------------------------------------

@@ -1,0 +1,12 @@
+;-----------------------------------------------------
+@back Loc3
+@hidePrinter 
+@set TaskText=ThirdTask
+@choice  button:Prefabs/Interactive/Ring pos:150,-300,0 handler:ButtonArea goto:.Picked set:isRingPicked=true
+@stop
+;-----------------------------------------------------
+# Picked
+@lock Location_3
+@set TaskText=FourthTask
+@choice  button:Prefabs/Interactive/Home pos:-850,450,0 handler:ButtonArea goto:Home.Home
+;-----------------------------------------------------

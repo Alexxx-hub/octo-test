@@ -1,0 +1,7 @@
+; English <en> to Ukrainian (Ukraine) <uk-UA> localization document for `LocationThree` naninovel script
+
+# 76b6182c
+; @choice  button:Prefabs/Interactive/Ring pos:150,-300,0 handler:ButtonArea goto:.Picked set:isRingPicked=true
+
+# f5d64488
+; @choice  button:Prefabs/Interactive/Home pos:-850,450,0 handler:ButtonArea goto:Home.Home
